@@ -10,7 +10,6 @@ ytemplate = ENV.get_template("yswitchconf.j2")
 
 # Use the open method to open the CSV file in read-only-mode
 csv_file = open("ports.csv", "r",)
-yaml_file = open("ports.yaml", "r",)
 
 # Create the CSV reader object
 csv_reader = csv.reader(csv_file)
