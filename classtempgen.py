@@ -29,4 +29,4 @@ class NetworkInterface(object):
 
 for row in csv_reader:
     interface_object = NetworkInterface(row[interface], row[description], row[vlan])
-    print(template.render(interface=interface_object))
+    print(template.render(intf=interface_object))
