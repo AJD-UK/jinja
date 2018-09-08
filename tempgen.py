@@ -12,7 +12,7 @@ csv_file = open("ports.csv", "r",)
 # Create the CSV reader object
 csv_reader = csv.reader(csv_file)
   
-# Create the header object, advance the CSV reader to the header line by using the next() method
+# Create the header object, advance the CSV reader to the header line by using the next() function
 header = next(csv_reader)
    
 # Search the headers for specifics strings and store
