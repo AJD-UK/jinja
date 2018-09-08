@@ -1,0 +1,13 @@
+---
+- name: GigabitEthernet0/1
+  desc: Server1
+  uplink: true
+- name: GigabitEthernet0/2
+  desc: Server2
+  vlan: 20
+- name: GigabitEthernet0/2
+  desc: Server3
+  vlan: 30 
+- name: GigabitEthernet0/2
+  desc: Server4
+  vlan: 40

@@ -1,14 +1,17 @@
 import csv
+import yaml
 from jinja2 import Environment, FileSystemLoader
 
 fsload = loader=(FileSystemLoader('.'))
 ENV = Environment(loader=(fsload))
 
 template = ENV.get_template("switchconf.j2")
+ytemplate = ENV.get_template("yswitchconf.j2")
 
 # Use the open method to open the CSV file in read-only-mode
 csv_file = open("ports.csv", "r",)
- 
+yaml_file = open("ports.yaml", "r",)
+
 # Create the CSV reader object
 csv_reader = csv.reader(csv_file)
   
@@ -30,3 +33,7 @@ class NetworkInterface(object):
 for row in csv_reader:
     interface_object = NetworkInterface(row[interface], row[description], row[vlan])
     print(template.render(intf=interface_object))
+
+with open("ports.yaml") as f:
+    interfaces = yaml.load(f)
+    print(ytemplate.render(yintf=interfaces))

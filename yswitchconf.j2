@@ -1,0 +1,5 @@
+{% for interface in yintf %}
+interface {{ interface.name }}
+ switchport access vlan {{ interface.vlan }}
+ switchport mode access
+{% endfor %}
