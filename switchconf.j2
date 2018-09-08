@@ -1,5 +1,10 @@
 interface {{ intf.name }}
  description {{ intf.description }}
+{%- if intf.uplink %}
+ switchport mode trunk
+!
+{%- else %}
  switchport access vlan {{ intf.vlan }}
  switchport mode access
-
+!
+{%- endif %}

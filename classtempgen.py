@@ -21,7 +21,7 @@ description = header.index("description")
 vlan = header.index("vlan")
 
 class NetworkInterface(object):
-    def __init__(self, name, description, vlan, uplink = False):
+    def __init__(self, name, description, vlan, uplink = True):
         self.name = name
         self.description = description
         self.vlan = vlan
